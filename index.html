@@ -1,158 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
+  <meta charset="utf-8">
+  <title>SimpleSheets Shopping Cart Demo</title>
+  <link rel='stylesheet' href="//fonts.googleapis.com/css?family=Duru+Sans|Istok+Web">
+  
+  <!-- font-awesome.min.css -->
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1G3Q0rV8OajdOFB93VYlnByNoe_eOn9PS">  
 
-    <!-- Basic Page Needs
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta charset="utf-8">
-    <title>simpleStore</title>
-    <meta name="description" content="A clean, responsive storefront boilerplate with no database or backend">
-    <meta name="author" content="">
+  <!-- main.css -->
+  <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1p8MvqVEgGYq3YQol4R8V7XZYMPrstaBA">  
 
-    <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- FONT
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- CSS
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<!-- imports.min.css -->
-	<link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1yEtLxjkJH3DFvgS2G8cunao2qapjd0Ji">
-	<!-- simpleStore.min.css -->
-    <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1IhpcZC-yN78wb_uXrJ3ghUyMyvkjw9G_">
-
-    <!-- Favicon
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1McxddRd9zXV1sDNLSqShESckvI_BibXY">
 
 </head>
+
 <body>
 
-    <!-- Primary Page Layout
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container simpleStore">
-        <div class="row">
-            <a class="brand" href="#"></a>
-            <a class="button button-primary u-pull-right simpleStore_viewCart">
-                <i class="fa fa-shopping-cart"></i> Cart <span class="simpleCart_total"></span>
-            </a>
+  <div class="site-container">
+
+    <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+      <div class="wrap">
+
+        <div class="title-area">
+          <h1 class="site-title" itemprop="headline"><a href="/">simpleCart<sup>(js)</sup> + Google Sheets</a></h1>
         </div>
-        <div class="simpleStore_container"></div>
-        <div class="simpleStore_cart_container"></div>
+
+        <div class="simplecart_area">
+          <div class="simplecart_cart">
+            <span class="showCart">
+          <span class="fa fa-shopping-cart"></span>
+            <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+            <span class="dropdown fa fa-chevron-circle-down"></span>
+            </span>
+            <button class="simpleCart_checkout">Checkout</button>
+            <div id="cartPopover" style="display:none">
+              <div class="simpleCart_items"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="site-inner">
+      <div class="wrap">
+
+        <div id="products" class="products">
+
+          <script id="hr-template" type="text/x-handlebars-template">
+            <div class="column one-third">
+              <div class="simpleCart_shelfItem item">
+                <div class="item_image"><img src="{{cells.Image}}"></div>
+                <h2 class="item_name">{{cells.Name}}</h2>
+                <div class="item_description">{{cells.Description}}</div>
+                <div style="margin-top:10px;">
+                  <span class="item_price">${{cells.Price}}</span>
+                  <button href="javascript:;" class="item_add">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </script>
+
+        </div>
+
+      </div>
     </div>
 
-    <!-- Templates
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <footer class="site-footer">
+      <p>Copyright &copy; 2015 by <a href="http://bradonomics.com/">Brad West</a> | SimpleSheets Shopping Cart</p>
+    </footer>
 
-    <!-- Products View -->
-    <script id="products-template" type="x-template">
-        <div class="column">
-            <div class="simpleCart_shelfItem">
-                <img src="" class="item_thumb"/>
-                <div class="row">
-                    <h5 class="item_name"></h5>
-                    <div class="simpleStore_getDetail_container">
-                        <span class="item_price"></span>
-                    </div>
-                    <div class="simpleStore_getDetail_container">
-                        <a class="button u-pull-right simpleStore_getDetail">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
+    <!-- jquery-1.11.3.min.js -->
+	<script src="https://drive.google.com/uc?export=view&id=1TZoRPos2WdtWkU5_bmwpVD1k23fT4Y98"></script>
 
-    <!-- Product Detail View -->
-    <script id="product-detail-template" type="x-template">
-        <div class="simpleCart_shelfItem simpleStore_detailView">
-            <a href="#" class="close view_close">&times;</a>
+    <!-- simpleCart.min.js -->
+	<script src="https://drive.google.com/uc?export=view&id=1-flES8pSCfaEI4Mkrl48bhM4T2AF8yBR"></script>
 
-            <div class="row">
-                <div class="four columns">
-                    <img src="" class="item_thumb"/>
-                </div>
-                <div class="eight columns">
-                    <h5 class="item_name"></h5>
+    <!-- handlebars.min.js -->
+	<script src="https://drive.google.com/uc?export=view&id=1SEZV-FkmMIq4UZ7VuxFgVT6LSb1w1XRT"></script>
 
-                    <p class="item_description"></p>
-                    <span class="item_price"></span>
+    <!-- sheetrock.min.js -->
+	<script src="https://drive.google.com/uc?export=view&id=1sq7M2tgo3ubFVtvulHfbaTGjbDWA3z9f"></script>
 
-                    <div class="qty">
-                        <label>QTY</label>
-                        <input type="number" value="1" min="1" step="1" class="item_Quantity">
-                    </div>
-                    <div class="simpleStore_options"></div>
-                    <a class="item_add button u-pull-right" href="javascript:;">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </script>
+    <!-- main.js -->
+	<script src="https://drive.google.com/uc?export=view&id=13gBk9ZEEKl1VTQXCnSONpCRA0z2hCwEY"></script>
 
-    <!-- Cart View -->
-    <script id="cart-template" type="x-template">
-        <div class="simpleStore_cart">
-            <h2>Cart</h2>
-            <a href="#" class="close">&times;</a>
 
-            <div class="row">
-                <div class="eight columns">
-                    <div class="simpleCart_items"></div>
-                    <a href="javascript:;" class="simpleCart_empty u-pull-left">Empty Cart <i class="fa fa-trash-o"></i></a>
-                </div>
-                <div class="four columns">
-                    <div class="cart_info">
-                        <div class="cart_info_item cart_itemcount">Items:
-                            <div class="simpleCart_quantity"></div>
-                        </div>
-                        <div class="cart_info_item cart_taxrate">Tax Rate:
-                            <div class="simpleCart_taxRate"></div>
-                        </div>
-                        <div class="cart_info_item cart_tax">Tax:
-                            <div class="simpleCart_tax"></div>
-                        </div>
-                        <div class="cart_info_item cart_shipping">Shipping:
-                            <div class="simpleCart_shipping"></div>
-                        </div>
-                        <div class="cart_info_item cart_total"><b>Total:
-                            <div class="simpleCart_grandTotal"></div>
-                        </b></div>
-                        <a href="javascript:;" class="button button-primary simpleStore_checkout u-pull-right">Checkout <i class="fa fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
+  </div>
 
-    <!-- Error View -->
-    <script id="error-template" type="x-template">
-        <div class="error">
-            <b>Sorry, something went wrong :(</b>
-			<p class="error_text"></p>
-			<a href="#" class="close alert_close">&times;</a>
-        </div>
-    </script>
-
-<!-- End Document
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
-
-<!-- Scripts
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-
-<!-- simpleCart.min.js -->
-<script src="https://drive.google.com/uc?export=view&id=1XfVpju9qobbEOf9a4GJXHeNMPrrJ3-x1"></script>
-<!-- simpleStore.min.js -->
-<script src="https://drive.google.com/uc?export=view&id=19c784ZPm0nFwOkpICnpWsX_cF-sh68Cs"></script>
-<!-- google-sheets.js -->
-<script src="https://drive.google.com/uc?export=view&id=1KRwWs-o1q35k9KwcVi1e-8RDMC11wM2g"></script>
-<!-- config.js -->
-<script src="https://drive.google.com/uc?export=view&id=1DwQ1cYhjZUbrjvshvnecw0QOhu9qMLEg"></script>
-
 
 </html>

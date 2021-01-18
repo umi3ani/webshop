@@ -1,6 +1,5 @@
 //* Add PayPal Email
 simpleCart({
-        currency: "EUR"
         checkout: { 
         type: "SendForm" , 
         url: "http://example.com/your/custom/checkout/url" ,
@@ -17,6 +16,7 @@ simpleCart({
         cartid: "12321321"
         }
     } 
+                currency: "EUR"
 });
 
 //* Add shopping cart dropdown in header

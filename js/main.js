@@ -26,9 +26,6 @@ simpleCart({
             customInfo2: "12321321"
         }
     },
-    // set the currency, see the currency 
-    // reference for more info
-    currency: "EUR",
     // collection of arbitrary data you may want to store 
     // with the cart, such as customer info
     data: {},
@@ -77,7 +74,6 @@ simpleCart({
       accuracy: 2
     });
 
-simpleCart.currency( "EUR" ); // set the currency to Euros
 
 //* Add shopping cart dropdown in header
 jQuery(document).ready(function () {

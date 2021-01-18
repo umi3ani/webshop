@@ -1,7 +1,5 @@
 //* Add PayPal Email
-simpleCart({
-    currency: "GBP" // set the currency to pounds sterling
-});
+simpleCart.currency( "EUR" ); // set the currency to Euros
 
 //* Add shopping cart dropdown in header
 jQuery(document).ready(function () {

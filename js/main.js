@@ -1,6 +1,6 @@
 //* Add PayPal Email
 simpleCart({
-        currency: "EUR": { code:"EUR", symbol:"€", name:"Euro" }
+        currency: "EUR"
         checkout: { 
         type: "SendForm" , 
         url: "http://example.com/your/custom/checkout/url" ,

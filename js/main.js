@@ -1,6 +1,5 @@
 //* Add PayPal Email
 simpleCart({
-		currency: "EUR"
    		checkout: { 
         type: "SendForm" , 
         url: "http://example.com/your/custom/checkout/url" ,
@@ -13,10 +12,12 @@ simpleCart({
         // an option list of extra name/value pairs that can
         // be sent along with the checkout data
         extra_data: {
-          storename: "Bob's cool plumbing store",
-          cartid: "12321321"
+        storename: "Bob's cool plumbing store",
+        cartid: "12321321"
         }
     } 
+		currency: "EUR"
+
 });
 
 //* Add shopping cart dropdown in header

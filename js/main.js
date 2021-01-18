@@ -1,4 +1,10 @@
-//* Add PayPal Email
+simpleCart({
+    checkout: { 
+        type: "SendForm" , 
+        url: "http://example.com/your/custom/checkout/url" 
+    } 
+});
+
 simpleCart.currency( "EUR" ); // set the currency to Euros
 
 //* Add shopping cart dropdown in header

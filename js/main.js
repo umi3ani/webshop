@@ -16,8 +16,6 @@ simpleCart({
         cartid: "12321321"
         }
     } 
-		currency: "EUR"
-
 });
 
 //* Add shopping cart dropdown in header

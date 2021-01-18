@@ -1,7 +1,7 @@
 simpleCart({
     checkout: {
         type: "SendForm" ,
-        url: "http://example.com/your/custom/checkout/url" ,
+        url: "https://studiogroenrijk.github.io/webshop/verzenden" ,
         method: "GET" ,
         success: "success.html" ,
         cancel: "cancel.html" ,

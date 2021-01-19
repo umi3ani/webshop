@@ -1,75 +1,127 @@
-<html>
-<head> 
-  <title>Demo Shop Thank You</title>
-  <script type="text/javascript" src="/js/jquery.min.js"></script>
-  
-  <!-- Download simpleCart at https://github.com/wojodesign/simplecart-js -->
-  <script type="text/javascript" src="/js/simpleCart.min.js"></script>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<title>Atelier K - Trimite Comanda</title>
+<link rel="icon" href="images/iconAK.ico"/>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/simpleCart.js"></script>
+
+<script src="js/simplecart.min.js"></script>
+
+<script src="js/qunit.js"></script>  
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+    <script>
+
+    simpleCart({
+
+cartColumns: [
+//{ attr: "image", label: false, view: "Imagine"},
+
+{ attr: "name" , label: "Produs" },
+
+{ attr: "quantity", label: "CAntitate", view: "input"},
+
+
+        { view:'remove', text: "X", label: "Sterge"},
+
+        //Price of item
+        //{ attr: "price", label: "Pret", view: "currency"},
+        //Subtotal of that row (quantity of that item * the price)
+        { attr: "total" , label: "Sub Toalt", view: "currency"  }
+    ],
+    cartStyle: "table" ,
+    checkout: {
+    type: "SendForm" ,
+    url: "/contact/Comandascript.php" ,
+    method: "POST" ,
+    success: "/contact/Comanda_trimisa.php" ,
+    cancel: "/contact/Comanda_netrimisa.php" ,
+    extra_data: {
+     Prenume : document.getElementById("firstname").value,
+Nume : document.getElementById("lastname").value,
+            Address : document.getElementById("address").value,
+        email : document.getElementById("email").value,
+        Telefon : document.getElementById("phone").value,
+        Mesaj : document.getElementById("comments").value,
+
+}
+
+}
+});
+
+simpleCart.bind( 'beforeCheckout' , function( data ){
+data.first_name = document.getElementById("firstname").value;
+data.last_name = document.getElementById("lastname").value;
+data.address = document.getElementById("address").value;
+data.email = document.getElementById("email").value;
+data.phone = document.getElementById("phone").value;
+data.comments = document.getElementById("comments").value;
+});
+    </script>
 </head>
 <body>
+<section>
+<div class="container">    
+<!-- Form -->
+<form name="myform" id="myForm" method="POST" action="/contact/Comandascript.php">
+        <fieldset> 
+        <h4 style="color: #4682B4"> Persoana de contact</h4>
+            <p>&nbsp;</p>
+           <table>
+ <tr>
+        <th> <p>   <label for="firstname">Prenume:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>    </th>  
+        <th><input type="text" name="firstname" placeholder="" title="Introduceti prenumele" class="required" id="firstname" size="50px" onblur='isEmpty(this.value)' ><font size="1" color="red"> <span id="msg"></span></font></p></th>
+</tr>   
+ <tr>   
+     <th> <p>   <label for="lastname">Nume:&nbsp; </label>    </th>  
+        <th><input type="text" name="lastname" placeholder="" title="Introduceti numele de familie" class="required" id="lastname" size="50px" onblur='isEmpty1(this.value)' > <font size="1" color="red"><span id="msg1"></span></font></p></th>
+    </tr>   
+    </table>
+    <hr>
+    <h4 style="color: #4682B4">Date de Livrare</h4>
+        <p>&nbsp;</p>
+    <table>
+         <tr>
+    <th>    <p>   <label for="address">Adresa de livrare:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label> </th>  
+    <th>     <input type="text"  name="address" placeholder="" title="Introduceti adresa de livrare" class="required" id="address" size="50px" onblur='isEmpty2(this.value)' ><font size="1" color="red"><span id="msg2"></span></font></p> </th>  
+         </tr>  
+          <tr>
+     <th>   <p>   <label for="email">Email:&nbsp; </label> </th>  
+    <th>     <input type="email" name="email" placeholder="" title="Introduceti o adresa de email corecta" class="required email" id="email" size="50px" onblur='isEmpty3(this.value)'><font size="1" color="red"><span id="msg3"></span></font></p> </th>  
+         </tr>  
+          <tr>
+     <th>   <p>   <label for="phone">Telefon:&nbsp; </label> </th>  
+    <th>    <input type="tel" name="phone" placeholder="" id="phone" size="50px" title="Introduceti numarul dvs. de telefon." onblur='isEmpty4(this.value)' onkeypress='return isNumberKey(event)'><font size="1" color="red"><span id="msg4"></span></font></p> </th>  
+        </tr>   
+        </table>
+        <hr>
+        <h4 style="color: #4682B4"> Informatii Suplimentare</h4>
+            <p>&nbsp;</p>
+        <table>
+         <tr>
+      <th>  <p>   <label for="message">Mesaj:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label> </th>  
+     <th> <input type="text" title="Completati aici daca doriti sa ne transmiteti info extra" name="message" placeholder="Completati aici daca doriti sa ne transmiteti info. extra." id="message" size="75px"></p></th>  
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<div class="simpleCart_items">
-  <table>
-    <thead>
-      <tr class="headerRow">
-        <th class="item-name">Name</th>
-        <th class="item-price">Price</th>
-        <th class="item-size">Size</th>
-        <th class="item-color">Color</th>
-        <th class="item-decrement"></th>
-        <th class="item-quantity">Qty</th>
-        <th class="item-increment"></th>
-        <th class="item-total">SubTotal</th>
-        <th class="item-remove"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="itemRow row-0 odd" id="cartItem_SCI-1">
-        <td class="item-name">Deer Shirt</td>
-        <td class="item-price">฿400.00</td>
-        <td class="item-size">Small</td>
-        <td class="item-color">Blue</td>
-        <td class="item-decrement"><a href="javascript:;" class="simpleCart_decrement" rel="noreferrer" data-ss1492271303="1">-</a></td>
-        <td class="item-quantity">2</td>
-        <td class="item-increment"><a href="javascript:;" class="simpleCart_increment" rel="noreferrer" data-ss1492271303="1">+</a></td>
-        <td class="item-total">฿800.00</td>
-        <td class="item-remove"><a href="javascript:;" class="simpleCart_remove" rel="noreferrer" data-ss1492271303="1">Remove</a></td>
-      </tr>
-      <tr class="itemRow row-1 even" id="cartItem_SCI-2">
-        <td class="item-name">Deer Shirt</td>
-        <td class="item-price">฿400.00</td>
-        <td class="item-size">Medium</td>
-        <td class="item-color">Clay</td>
-        <td class="item-decrement"><a href="javascript:;" class="simpleCart_decrement" rel="noreferrer" data-ss1492271303="1">-</a></td>
-        <td class="item-quantity">1</td>
-        <td class="item-increment"><a href="javascript:;" class="simpleCart_increment" rel="noreferrer" data-ss1492271303="1">+</a></td>
-        <td class="item-total">฿400.00</td>
-        <td class="item-remove"><a href="javascript:;" class="simpleCart_remove" rel="noreferrer" data-ss1492271303="1">Remove</a></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  
-<form
-  action="https://formspree.io/f/maylvqow"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="text" name="_replyto">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
+</tr>   
+</table>
 
-  <!-- your other form fields go here -->
+   <hr>
+        </fieldset>  
+   <a href="javascript:;"  id="submit" name="submit" value="submit" class="simpleCart_checkout" ><span class="checkout_btn"> Trimite comanda</span></a>
 
-  <button type="submit">Send</button>
-</form>
-
-  <script type="text/javascript">
-    simpleCart.empty();
-  </script>
+        </form>
+        </div> <!-- /end #contact-form -->       
+ </div>
+</section>
+<hr>
 </body>
+</html>

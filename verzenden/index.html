@@ -1,120 +1,145 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<title>Atelier K - Trimite Comanda</title>
-<link rel="icon" href="images/iconAK.ico"/>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.css">
-<script src="js/simpleCart.js"></script>
-
-<script src="js/simplecart.min.js"></script>
-
-<script src="js/qunit.js"></script>  
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
-
-    <script>
-
-    simpleCart({
-
-cartColumns: [
-//{ attr: "image", label: false, view: "Imagine"},
-
-{ attr: "name" , label: "Produs" },
-
-{ attr: "quantity", label: "CAntitate", view: "input"},
-
-
-        { view:'remove', text: "X", label: "Sterge"},
-
-        //Price of item
-        //{ attr: "price", label: "Pret", view: "currency"},
-        //Subtotal of that row (quantity of that item * the price)
-        { attr: "total" , label: "Sub Toalt", view: "currency"  }
-    ],
-    cartStyle: "table" ,
-    checkout: {
-    type: "SendForm" ,
-    url: "/contact/Comandascript.php" ,
-    method: "POST" ,
-    success: "/contact/Comanda_trimisa.php" ,
-    cancel: "/contact/Comanda_netrimisa.php" ,
-
-}
-});
-
-simpleCart.bind( 'beforeCheckout' , function( data ){
-data.first_name = document.getElementById("firstname").value;
-data.last_name = document.getElementById("lastname").value;
-data.address = document.getElementById("address").value;
-data.email = document.getElementById("email").value;
-data.phone = document.getElementById("phone").value;
-data.comments = document.getElementById("comments").value;
-});
-    </script>
+<html>
+<head> 
+  <title>Demo Shop Thank You</title>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  
+  <!-- Download simpleCart at https://github.com/wojodesign/simplecart-js -->
+  <script type="text/javascript" src="/js/simpleCart.min.js"></script>
 </head>
 <body>
-<section>
-<div class="container">    
-<!-- Form -->
-<form
-  action="https://formspree.io/f/maylvqow"
-  method="POST"
->        <fieldset> 
-        <h4 style="color: #4682B4"> Persoana de contact</h4>
-            <p>&nbsp;</p>
-           <table>
- <tr>
-        <th> <p>   <label for="firstname">Prenume:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>    </th>  
-        <th><input type="text" name="firstname" placeholder="" title="Introduceti prenumele" class="required" id="firstname" size="50px" onblur='isEmpty(this.value)' ><font size="1" color="red"> <span id="msg"></span></font></p></th>
-</tr>   
- <tr>   
-     <th> <p>   <label for="lastname">Nume:&nbsp; </label>    </th>  
-        <th><input type="text" name="lastname" placeholder="" title="Introduceti numele de familie" class="required" id="lastname" size="50px" onblur='isEmpty1(this.value)' > <font size="1" color="red"><span id="msg1"></span></font></p></th>
-    </tr>   
-    </table>
-    <hr>
-    <h4 style="color: #4682B4">Date de Livrare</h4>
-        <p>&nbsp;</p>
-    <table>
-         <tr>
-    <th>    <p>   <label for="address">Adresa de livrare:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label> </th>  
-    <th>     <input type="text"  name="address" placeholder="" title="Introduceti adresa de livrare" class="required" id="address" size="50px" onblur='isEmpty2(this.value)' ><font size="1" color="red"><span id="msg2"></span></font></p> </th>  
-         </tr>  
-          <tr>
-     <th>   <p>   <label for="email">Email:&nbsp; </label> </th>  
-    <th>     <input type="email" name="email" placeholder="" title="Introduceti o adresa de email corecta" class="required email" id="email" size="50px" onblur='isEmpty3(this.value)'><font size="1" color="red"><span id="msg3"></span></font></p> </th>  
-         </tr>  
-          <tr>
-     <th>   <p>   <label for="phone">Telefon:&nbsp; </label> </th>  
-    <th>    <input type="tel" name="phone" placeholder="" id="phone" size="50px" title="Introduceti numarul dvs. de telefon." onblur='isEmpty4(this.value)' onkeypress='return isNumberKey(event)'><font size="1" color="red"><span id="msg4"></span></font></p> </th>  
-        </tr>   
-        </table>
-        <hr>
-        <h4 style="color: #4682B4"> Informatii Suplimentare</h4>
-            <p>&nbsp;</p>
-        <table>
-         <tr>
-      <th>  <p>   <label for="message">Mesaj:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label> </th>  
-     <th> <input type="text" title="Completati aici daca doriti sa ne transmiteti info extra" name="message" placeholder="Completati aici daca doriti sa ne transmiteti info. extra." id="message" size="75px"></p></th>  
 
-</tr>   
-</table>
+ 
+ 
+ 
+<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Full Name</label>
+    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+    <label for="email-address">Email Address</label>
+    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+    <label for="message">Message</label>
+    <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+  </fieldset>
+  <input type="submit" value="Submit">
+</form><style>/* reset */
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm fieldset,
+#fs-frm optgroup,
+#fs-frm label,
+#fs-frm #card-element:disabled {
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+#fs-frm label,
+#fs-frm legend,
+#fs-frm ::placeholder {
+  font-size: .825rem;
+  margin-bottom: .5rem;
+  padding-top: .2rem;
+  display: flex;
+  align-items: baseline;
+}
 
-   <hr>
-        </fieldset>  
-   <a href="javascript:;"  id="submit" name="submit" value="submit" class="simpleCart_checkout" ><span class="checkout_btn"> Trimite comanda</span></a>
+/* border, padding, margin, width */
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm #card-element {
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.9);
+  padding: .75em 1rem;
+  margin-bottom: 1.5rem;
+}
+#fs-frm input:focus,
+#fs-frm select:focus,
+#fs-frm textarea:focus {
+  background-color: white;
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: gray;
+  outline-offset: -1px;
+}
+#fs-frm [type="text"],
+#fs-frm [type="email"] {
+  width: 100%;
+}
+#fs-frm [type="button"],
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  width: auto;
+  cursor: pointer;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+#fs-frm [type="button"]:focus,
+#fs-frm [type="submit"]:focus,
+#fs-frm [type="reset"]:focus {
+  outline: none;
+}
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+  margin-bottom: 0;
+}
+#fs-frm select {
+  text-transform: none;
+}
 
-        </form>
-        </div> <!-- /end #contact-form -->       
- </div>
-</section>
-<hr>
+#fs-frm [type="checkbox"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  appearance: checkbox;
+  display: inline-block;
+  width: auto;
+  margin: 0 .5em 0 0 !important;
+}
+
+#fs-frm [type="radio"] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+  appearance: radio;
+}
+
+/* address, locale */
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+  display: inline;
+}
+#fs-frm fieldset.locale input[name="city"] {
+  width: 52%;
+}
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+  width: 20%;
+}
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"] {
+  margin-right: 3%;
+}
+</style>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  <script type="text/javascript">
+    simpleCart.empty();
+  </script>
 </body>
-</html>

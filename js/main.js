@@ -50,6 +50,17 @@ simpleCart({
     beforeRemove           : null
 });
 
+simpleCart({
+  shippingCustom: function () { 
+    if (simpleCart.quantity() > 50) {
+      return 0;
+    } else if (simpleCart.quantity() > 20) {
+      return 10;
+    } else {
+      return 20;
+    }
+  }
+});
 
 //* Add shopping cart dropdown in header
 jQuery(document).ready(function () {

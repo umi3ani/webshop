@@ -27,6 +27,33 @@
 </form>
 
   <script type="text/javascript">
-    simpleCart.empty();
+        simpleCart({
+      cartColumns: [
+        {attr: "name", label: "Name"},
+        {attr: "price", label: "Preis", view: 'currency'},
+        {attr: "quantity", label: "Menge"},
+        {attr: "total", label: "Summe", view: 'currency'},
+        {view: "remove", text: "Remove", label: false}
+      ],
+      checkout: {
+        type: "SendForm",
+        url: "https://secure.fundraisingbox.com/app/simpleCartJs",
+        extra_data: {
+          hash: "PUT_YOUR_FORM_HASH_HERE" // <-- TODO
+        }
+      }
+    });
+
+    // Configure EURO as currency
+    simpleCart.currency({
+      code: "EUR",
+      name: "Euro",
+      symbol: " &euro; ",
+      delimiter: ".",
+      decimal: ",",
+      after: false,
+      accuracy: 2
+    });
+  </script>
   </script>
 </body>

@@ -1,13 +1,45 @@
+<!DOCTYPE html>
 <html>
-<head> 
-  <title>Demo Shop Thank You</title>
-  <script type="text/javascript" src="/js/jquery.min.js"></script>
-  
-  <!-- Download simpleCart at https://github.com/wojodesign/simplecart-js -->
-  <script type="text/javascript" src="/js/simpleCart.min.js"></script>
+
+<head>
+  <meta charset="utf-8">
+  <title>SimpleSheets Shopping Cart Demo</title>
+  <link rel='stylesheet' href="//fonts.googleapis.com/css?family=Duru+Sans|Istok+Web">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-  
+
+  <div class="site-container">
+
+    <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+      <div class="wrap">
+
+        <div class="title-area">
+          <h1 class="site-title" itemprop="headline"><a href="/">simpleCart<sup>(js)</sup> + Google Sheets</a></h1>
+        </div>
+
+        <div class="simplecart_area">
+          <div class="simplecart_cart">
+            <span class="showCart">
+          <span class="fa fa-shopping-cart"></span>
+            <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+            <span class="dropdown fa fa-chevron-circle-down"></span>
+            </span>
+            <button class="simpleCart_checkout">Checkout</button>
+            <div id="cartPopover" style="display:none">
+              <div class="simpleCart_items"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="site-inner">
+      <div class="wrap">
+
 <div id="Order-form">
   <form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
       <fieldset>
@@ -44,23 +76,21 @@ setInterval(function () {
 }, 5);
 </script>
 
+      </div>
+    </div>
 
-<form action="//formspree.io/maylvqow" class="form-horizontal" role="form">
-     <div class="form-group">
-         <label for="inputEmail" class="col-sm-3 control-label">Epost :</label>
-         <div class="col-sm-9">
-             <input type="email" class="form-control" id="inputEmail" placeholder="Epost" required />
-         </div>
-     </div>
-     <div class="form-group">
-         <div class="col-sm-offset-3 col-sm-3">
-             <button type="submit" href="javascript:;" class="simpleCart_checkout">
-                 <img src="/images/bla.png" alt="Kort">
-             </button>
-         </div>
-     </div>
-</form>
+    <footer class="site-footer">
+      <p>Copyright &copy; 2020 by <a href="http://groenrijk.nl/">GroenRijk</a> | GroenRijk, weet wat er leeft!</p>
+    </footer>
 
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/simpleCart.min.js"></script>
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/sheetrock.min.js"></script>
+    <script src="js/main.js"></script>
 
-</div> 
+  </div>
+
 </body>
+
+</html>

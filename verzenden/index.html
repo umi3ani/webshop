@@ -8,54 +8,35 @@
 </head>
 <body>
   
-<form
-  action="https://formspree.io/f/maylvqow"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="text" name="_replyto">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-      <div class="simpleCart_items"></div>
+<div id="Order-form">
+  <form accept-charset="UTF-8" action="//formspree.io/YOUR-EMAIL-ADDRESS" class="contact-form" method="post">
+      <fieldset>
+	<p>姓名：<br> 
+        <input type='text' name='Name' placeholder='姓名（必填）' required /></p>
+	<p>邮箱：<br>
+        <input type='text' name='Email' placeholder='邮箱（必填）' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
+	<p>电话：<br>	
+        <input type='text' name='Phone' placeholder='手机号（必填）' required /></p>
+	<p>地址：<br>
+        <input type='text' name='Address' placeholder='详细收件地址（必填）' required /></p>
+	<p>备注：<br>	
+        <textarea type='comments' name='Comments' rows="6" placeholder='备注信息' /></textarea></p>
+	<input type='hidden' name='Order' id='getcartitems'></input>
+        <input type="hidden" name="_subject" value="New Order from PinWei.DE" />
+	<h4 style="color: darkred">请选择付款方式 &nbsp;&nbsp;
+	<select id="mySelect" name="Payment" required >
+	  <option value="AliPay">支付宝</option>
+	  <option value="BankTransfer">银行转账</option>
+	</select></h4>
+	<small><em>下单后您将会收到账号信息</em></small>
+	<hr style="border:dashed #666 1px;">
+	<button class="pull-right" type="submit"><h4>确认信息，我要下单!</h4></button>
+      </fieldset>
+	<input type="hidden" name="_next" value="/success/"/>
+  <span class="pull-right" style="font-size: 65%;">
+点击'下单'代表您已阅读并接受相关<a alt="terms and policy" href="/terms/"><strong>条款及条件</strong></a>
+  </span>
+  </form><br>
 
-  </label>
-
-  <!-- your other form fields go here -->
-
-  <button type="submit">Send</button>
-</form>
-
-  <script type="text/javascript">
-        simpleCart({
-      cartColumns: [
-        {attr: "name", label: "Name"},
-        {attr: "price", label: "Preis", view: 'currency'},
-        {attr: "quantity", label: "Menge"},
-        {attr: "total", label: "Summe", view: 'currency'},
-        {view: "remove", text: "Remove", label: false}
-      ],
-      checkout: {
-        type: "SendForm",
-        url: "https://secure.fundraisingbox.com/app/simpleCartJs",
-        extra_data: {
-          hash: "PUT_YOUR_FORM_HASH_HERE" // <-- TODO
-        }
-      }
-    });
-
-    // Configure EURO as currency
-    simpleCart.currency({
-      code: "EUR",
-      name: "Euro",
-      symbol: " &euro; ",
-      delimiter: ".",
-      decimal: ",",
-      after: false,
-      accuracy: 2
-    });
-  </script>
-  </script>
+</div> 
 </body>

@@ -41,11 +41,7 @@
     <div class="site-inner">
       <div class="wrap">
 
-<script type="text/javascript">
-setInterval(function () {
-  document.getElementById("getcartitems").value = document.getElementById("cartitems").innerHTML;
-}, 5);
-</script>
+
 	      
 <div id="Order-form">
   <form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
@@ -60,7 +56,7 @@ setInterval(function () {
         <input type='text' name='Address' placeholder='Adres' required /></p>
 	<p>Comments：<br>	
         <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
-	<input type='text' name='Order' id='getcartitems'></input>
+	<input type='text' name='Order' id='simpleCart_items'></input>
         <input type="text" name="_subject" value="Er is een nieuwe order" />
 	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
 	<select id="mySelect" name="Payment" required >
@@ -75,6 +71,12 @@ setInterval(function () {
   <span class="pull-right" style="font-size: 65%;">
 Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
   </span>
+	    <script type="text/javascript">
+setInterval(function () {
+  document.getElementById("simpleCart_items").value = document.getElementById("cartitems").innerHTML;
+}, 5);
+</script>
+	    
   </form><br>
 
       </div>

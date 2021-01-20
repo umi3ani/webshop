@@ -12,31 +12,38 @@
   <form accept-charset="UTF-8" action="//formspree.io/YOUR-EMAIL-ADDRESS" class="contact-form" method="post">
       <fieldset>
 	<p>姓名：<br> 
-        <input type='text' name='Name' placeholder='姓名（必填）' required /></p>
+        <input type='text' name='Name' placeholder='Naam' required /></p>
 	<p>邮箱：<br>
-        <input type='text' name='Email' placeholder='邮箱（必填）' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
+        <input type='text' name='Email' placeholder='Email' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
 	<p>电话：<br>	
-        <input type='text' name='Phone' placeholder='手机号（必填）' required /></p>
+        <input type='text' name='Phone' placeholder='Telefoon' required /></p>
 	<p>地址：<br>
-        <input type='text' name='Address' placeholder='详细收件地址（必填）' required /></p>
+        <input type='text' name='Address' placeholder='Adres' required /></p>
 	<p>备注：<br>	
-        <textarea type='comments' name='Comments' rows="6" placeholder='备注信息' /></textarea></p>
+        <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
 	<input type='hidden' name='Order' id='getcartitems'></input>
         <input type="hidden" name="_subject" value="New Order from PinWei.DE" />
-	<h4 style="color: darkred">请选择付款方式 &nbsp;&nbsp;
+	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
 	<select id="mySelect" name="Payment" required >
 	  <option value="AliPay">支付宝</option>
-	  <option value="BankTransfer">银行转账</option>
+	  <option value="BankTransfer">BankTransfer</option>
 	</select></h4>
-	<small><em>下单后您将会收到账号信息</em></small>
+	<small><em>wat is dit</em></small>
 	<hr style="border:dashed #666 1px;">
-	<button class="pull-right" type="submit"><h4>确认信息，我要下单!</h4></button>
+	<button class="pull-right" type="submit"><h4>wat is dit</h4></button>
       </fieldset>
 	<input type="hidden" name="_next" value="/success/"/>
   <span class="pull-right" style="font-size: 65%;">
-点击'下单'代表您已阅读并接受相关<a alt="terms and policy" href="/terms/"><strong>条款及条件</strong></a>
+wat is dit<a alt="terms and policy" href="/terms/"><strong>wat is dit</strong></a>
   </span>
   </form><br>
+
+<script type="text/javascript">
+setInterval(function () {
+  document.getElementById("getcartitems").value = document.getElementById("cartitems").innerHTML;
+}, 5);
+</script>
+
 
 </div> 
 </body>

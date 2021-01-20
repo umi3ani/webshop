@@ -1,103 +1,32 @@
-<!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <title>SimpleSheets Shopping Cart Demo</title>
-  <link rel='stylesheet' href="//fonts.googleapis.com/css?family=Duru+Sans|Istok+Web">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/main.css">
+<head> 
+  <title>Demo Shop Thank You</title>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  
+  <!-- Download simpleCart at https://github.com/wojodesign/simplecart-js -->
+  <script type="text/javascript" src="/js/simpleCart.min.js"></script>
 </head>
-
 <body>
-
-<form id="fs-frm" name="registration-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
-
   
-  <div class="site-container">
+<form
+  action="https://formspree.io/f/maylvqow"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="text" name="_replyto">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
 
-    <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-      <div class="wrap">
+  <!-- your other form fields go here -->
 
-        <div class="title-area">
-          <h1 class="site-title" itemprop="headline"><a href="/">simpleCart<sup>(js)</sup> + Google Sheets</a></h1>
-        </div>
+  <button type="submit">Send</button>
+</form>
 
-        <div class="simplecart_area">
-          <div class="simplecart_cart">
-            <span class="showCart">
-          <span class="fa fa-shopping-cart"></span>
-            <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
-            <span class="dropdown fa fa-chevron-circle-down"></span>
-            </span>
-            <button class="simpleCart_checkout">Checkout</button>
-            <div id="cartPopover" style="display:none">
-              <div class="simpleCart_items"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </header>
-
-    <div class="site-inner">
-      <div class="wrap">
-
-        <div id="products" class="products">
-
-          <script id="hr-template" type="text/x-handlebars-template">
-            <div class="column one-third">
-              <div class="simpleCart_shelfItem item">
-                <div class="item_image"><img src="{{cells.Image}}"></div>
-                <h2 class="item_name">{{cells.Name}}</h2>
-                <div class="item_description">{{cells.Description}}</div>
-                <div style="margin-top:10px;">
-                  <span class="item_price">€{{cells.Price}}</span>
-                  <button href="javascript:;" class="item_add">In winkelmandje</button>
-                </div>
-              </div>
-            </div>
-          </script>
-
-        </div>
-
-      </div>
-    </div>
-
-    <footer class="site-footer">
-      <p>Copyright &copy; 2020 by <a href="http://groenrijk.nl/">GroenRijk</a> | GroenRijk, weet wat er leeft!</p>
-    </footer>
-
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/simpleCart.min.js"></script>
-    <script src="js/handlebars.min.js"></script>
-    <script src="js/sheetrock.min.js"></script>
-    <script src="js/main.js"></script>
-
-  </div>
-
-   <fieldset id="fs-frm-inputs">
-    <label for="full-name">Full Name</label>
-    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-    <label for="street-address">Street Address</label>
-    <input type="text" name="street" id="street-address" placeholder="Street" required="">
-    <fieldset class="locale">
-      <legend>Locale</legend>
-      <input type="text" name="city" placeholder="City" required="">
-       <input type="text" name="postal-code" placeholder="12345" required="">
-      <input type="text" name="place" placeholder="place" required="">
-    </fieldset>
-    <label for="note">
-    </label>
-    <textarea rows="2" name="note" id="note" placeholder="Include any additional information"></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
-  </fieldset>
-  <input type="submit" value="Register">
-</form> 
-  
-  
+  <script type="text/javascript">
+    simpleCart.empty();
+  </script>
 </body>
-
-</html>

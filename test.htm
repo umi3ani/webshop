@@ -44,15 +44,54 @@
 
 	      
 <div id="Order-form">
-
+  <form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
+      <fieldset>
+	<p>Name：<br> 
+        <input type='text' name='Name' placeholder='Naam' required /></p>
+	<p>Email：<br>
+        <input type='text' name='Email' placeholder='Email' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
+	<p>Phone：<br>	
+        <input type='text' name='Phone' placeholder='Telefoon' required /></p>
+	<p>Address：<br>
+        <input type='text' name='Address' placeholder='Adres' required /></p>
+	<p>Comments：<br>	
+        <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
 	
-<form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
+	<div class="simpleCart_items" id="simplecartitems">0033456</div>
+	<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
 
-    <div name="mysubmitbutton" id="mysubmitbutton" class="simpleCart_items" onclick="javascript:document.forms[0].submit();">
-    Button Text
-    </div>
-</form>	  
-	  
+	<input type='hidden' name='Order' id='getcartitems'></input>
+    <input type="hidden" name="_subject" value="New Order" />
+    
+	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
+	<select id="mySelect" name="Payment" required >
+	  <option value="AliPay">AliPay</option>
+	  <option value="BankTransfer">BankTransfer</option>
+	</select></h4>
+	<small><em>wat is dit</em></small>
+	<hr style="border:dashed #666 1px;">
+	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
+      </fieldset>
+      
+	<input type="text" name="_next" value="/success/"/>
+  <span class="pull-right" style="font-size: 65%;">
+Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
+  </span>
+  
+  <script type="text/javascript">
+//Get data from division (inner data from div)    
+    var innerdata=document.getElementById('simplecartitems').innerHTML; 
+
+//Set text field data here    
+    document.getElementById('simpleCart_items').value=innerdata;
+
+</script>
+  
+  </form><br>
+
+
+
+
       </div>
     </div>
 

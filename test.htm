@@ -78,13 +78,10 @@
 Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
   </span>
   
-  <script type="text/javascript">
-//Get data from division (inner data from div)    
-    var innerdata=document.getElementById('simplecartitems').innerHTML; 
-
-//Set text field data here    
-    document.getElementById('simpleCart_items').value=innerdata;
-
+<script type="text/javascript">
+setInterval(function () {
+  document.getElementById("simplecartitems").value = document.getElementById("simpleCart_items").innerHTML;
+}, 5);
 </script>
   
   </form><br>

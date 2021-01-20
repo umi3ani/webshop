@@ -31,7 +31,23 @@
        <input type="text" name="postal-code" placeholder="12345" required="">
       <input type="text" name="place" placeholder="place" required="">
     </fieldset>
-    <label for="note">Note</label>
+    <label for="note">
+    
+              <div class="simplecart_area">
+          <div class="simplecart_cart">
+            <span class="showCart">
+          <span class="fa fa-shopping-cart"></span>
+            <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+            <span class="dropdown fa fa-chevron-circle-down"></span>
+            </span>
+            <button class="simpleCart_checkout">Checkout</button>
+            <div id="cartPopover" style="display:none">
+              <div class="simpleCart_items"></div>
+            </div>
+          </div>
+        </div>
+      
+    </label>
     <textarea rows="2" name="note" id="note" placeholder="Include any additional information"></textarea>
     <input type="hidden" name="_subject" id="email-subject" value="Registration Form Submission">
   </fieldset>

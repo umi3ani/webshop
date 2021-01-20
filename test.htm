@@ -54,8 +54,8 @@
         <input type='text' name='Address' placeholder='Adres' required /></p>
 	<p>备注：<br>	
         <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
-	<input type='hidden' name='Order' id='getcartitems'></input>
-        <input type="hidden" name="_subject" value="New Order from PinWei.DE" />
+	<input type='text' name='Order' id='getcartitems'></input>
+        <input type="text" name="_subject" value="New Order from PinWei.DE" />
 	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
 	<select id="mySelect" name="Payment" required >
 	  <option value="AliPay">支付宝</option>
@@ -65,7 +65,7 @@
 	<hr style="border:dashed #666 1px;">
 	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
       </fieldset>
-	<input type="hidden" name="_next" value="/success/"/>
+	<input type="text" name="_next" value="/success/"/>
   <span class="pull-right" style="font-size: 65%;">
 Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
   </span>

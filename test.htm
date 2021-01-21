@@ -57,31 +57,36 @@
 	<p>Comments：<br>	
         <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
 	
-	<div class="simpleCart_items" id="simplecartitems">0033456</div>
+	<div class="simpleCart_items" id="simplecartitems">items</div>
 	<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
 
-	<input type='hidden' name='Order' id='simplecartitems'></input>
-    <input type="hidden" name="_subject" value="New Order" />
+<div id="simplecartitems" class="simpleCart_items" contenteditable="true" name="simplecartitems" style="width:300px;height:100px;">
+<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+</div>
+
+	<textarea id="hiddeninput" name="hiddeninput"></textarea>
+
     
 	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
 	<select id="mySelect" name="Payment" required >
 	  <option value="AliPay">AliPay</option>
 	  <option value="BankTransfer">BankTransfer</option>
 	</select></h4>
-	<small><em>asdsadsadasdasdsdas</em></small>
+	<small><em>testtesdfdfertretrhyte</em></small>
 	<hr style="border:dashed #666 1px;">
 	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
       </fieldset>
       
-	<input type="text" name="_next" value="/success/"/>
-  <span class="pull-right" style="font-size: 65%;">
-Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
-  </span>
+<input type="submit" id="save" name="save" value="Submit"/>
+
   
 <script type="text/javascript">
-setInterval(function () {
-  document.getElementById("simplecartitems").value = document.getElementById("simpleCart_items").innerHTML;
-}, 5);
+(function(){
+    ('save').click(function () {
+        var mysave = ('simplecartitems').html();
+        ('hiddeninput').val(mysave);
+    });
+});
 </script>
   
   </form><br>

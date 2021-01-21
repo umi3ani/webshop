@@ -63,7 +63,7 @@
 	  <option value="AliPay">AliPay</option>
 	  <option value="BankTransfer">BankTransfer</option>
 	</select></h4>
-	<small><em>dsasdadsadsdsadas</em></small>
+	<small><em>ytytryrtyrtytyrty</em></small>
 	<hr style="border:dashed #666 1px;">
 	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
       </fieldset>
@@ -81,33 +81,20 @@ Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
 
 
-
 <script type="text/javascript">
-function append(){
+function handleSubmit(event) {
+  event.preventDefault();
 
-  var element = document.getElementById("simplecartitems");
-  var jsonObject = {};
-  jsonObject.id = element.id;
-  jsonObject.innerHTML = element.innerHTML;
+  const data = new FormData(event.target);
 
-  var jsonString = JSON.stringify(jsonObject); // this is json for your div. 
+  const value = data.get('simplecartitems');
 
-  /// for append div and get div object back from json.
-  
-  var elementProto = JSON.parse(jsonString);
-  
-  var element = document.createElement("simplecartitems");
-  element.innerHTML = elementProto.innerHTML;
-  element.id = elementProto.id;
-  
-  
-  // append to container (in your case its page 1 or 2)
-  
-  document.getElementById("simplecartitems").append(element);
+  console.log({ value });
 }
 
+const form = document.querySelector('Order-form');
+form.addEventListener('submit', handleSubmit);
 </script>
-
 
 <script type="text/javascript">
 setInterval(function () {

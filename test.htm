@@ -1,35 +1,50 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>SimpleSheets Shopping Cart Demo</title>
-  <link rel='stylesheet' href="//fonts.googleapis.com/css?family=Duru+Sans|Istok+Web">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/main.css">
-</head>
 
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>simpleStore</title>
+    <meta name="description" content="A clean, responsive storefront boilerplate with no database or backend">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/imports.min.css">
+    <link rel="stylesheet" href="css/simpleStore.min.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
 <body>
 
-  <div class="site-container">
-
-    <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-      <div class="wrap">
-
-        <div class="title-area">
-          <h1 class="site-title" itemprop="headline"><a href="/">simpleCart<sup>(js)</sup> + Google Sheets</a></h1>
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container simpleStore">
+        You can see the <a target="_blank" href="https://docs.google.com/spreadsheets/d/1eDIC1zfBP3OWChohDDzIv49GBcxxbX8IkYPKBYPZk58/edit#gid=1840056159">Google Sheet here</a>
+        <div class="row">
+            <a class="brand" href="#"></a>
+            <a class="button button-primary u-pull-right simpleStore_viewCart">
+                <i class="fa fa-shopping-cart"></i> Cart <span class="simpleCart_total"></span>
+            </a>
         </div>
-
-
-      </div>
+        <div class="simpleStore_container"></div>
+        <div class="simpleStore_cart_container"></div>
  
-    </header>
-
-    <div class="site-inner">
-      <div class="wrap">
-
-
-	      
+	    
 <div id="Order-form">
   <form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
       <fieldset>
@@ -77,24 +92,20 @@ setInterval(function () {
 
 </script>
   
-  </form><br>
-
-
-      </div>
+  </form><br>	    
+	
     </div>
 
-    <footer class="site-footer">
-      <p>Copyright &copy; 2020 by <a href="http://groenrijk.nl/">GroenRijk</a> | GroenRijk, weet wat er leeft!</p>
-    </footer>
-
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/simpleCart.min.js"></script>
-    <script src="js/handlebars.min.js"></script>
-    <script src="js/sheetrock.min.js"></script>
-    <script src="js/main.js"></script>
-
-  </div>
-
+  
 </body>
+
+<!-- Scripts
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/simpleCart.min.js"></script>
+<script src="js/simpleStore.min.js"></script>
+
+<script src="js/google-sheets.js"></script>
+<script src="js/config.js"></script>
 
 </html>

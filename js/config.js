@@ -18,12 +18,19 @@ $(function() {
 
 	    // how simpleCart should checkout, see the checkout reference for more info
 	    checkout: {
-	        type: "PayPal" ,
-	        email: "you@yours.com"
-	    },
+        type: "SendForm" ,
+        url: "https://studiogroenrijk.github.io/webshop/test.htm" ,
+        method: "GET" ,
+        success: "success.html" ,
+        cancel: "cancel.html" ,
+        extra_data: {
+        customInfo1: "some custom information",
+        customInfo2: "12321321"
+        }
+    },
 
 	    // set the currency, see the currency reference for more info
-	    currency: "USD",
+	    currency: "EUR",
 
 	    // collection of arbitrary data you may want to store with the cart,
 	    // such as customer info

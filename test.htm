@@ -57,36 +57,33 @@
 	<p>Comments：<br>	
         <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
 	
-	<div class="simpleCart_items" id="simplecartitems">items</div>
-	<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
-
-<div id="simplecartitems" class="simpleCart_items" contenteditable="true" name="simplecartitems" style="width:300px;height:100px;">
-<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
-</div>
-
-	<textarea id="hiddeninput" name="hiddeninput"></textarea>
-
-    
+  
 	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
 	<select id="mySelect" name="Payment" required >
 	  <option value="AliPay">AliPay</option>
 	  <option value="BankTransfer">BankTransfer</option>
 	</select></h4>
-	<small><em>testtesdfdfertretrhyte</em></small>
+	<small><em>iioioiuoiouioioiu</em></small>
 	<hr style="border:dashed #666 1px;">
 	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
       </fieldset>
       
-<input type="submit" id="save" name="save" value="Submit"/>
+	<input type="text" name="_next" value="/success/"/>
+  <span class="pull-right" style="font-size: 65%;">
+Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
+  </span>
 
+
+<div id="simplecartitems" class="simpleCart_items" contenteditable="true" name="simplecartitems">
+<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+</div>
+
+<input type="hidden" name="simplecartitems" id="simplecartitemshidden" />
   
 <script type="text/javascript">
-(function(){
-    ('save').click(function () {
-        var mysave = ('simplecartitems').html();
-        ('hiddeninput').val(mysave);
-    });
-});
+setInterval(function () {
+  document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerHTML;
+}, 5);
 </script>
   
   </form><br>

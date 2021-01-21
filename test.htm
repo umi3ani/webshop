@@ -63,7 +63,7 @@
 	  <option value="AliPay">AliPay</option>
 	  <option value="BankTransfer">BankTransfer</option>
 	</select></h4>
-	<small><em>iioioiuoiouioioiu</em></small>
+	<small><em>dsasdadsadsdsadas</em></small>
 	<hr style="border:dashed #666 1px;">
 	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
       </fieldset>
@@ -78,8 +78,37 @@ Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
 <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
 </div>
 
-<input type="hidden" name="simplecartitems" id="simplecartitemshidden" />
+<input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
+
+
+
+<script type="text/javascript">
+function append(){
+
+  var element = document.getElementById("simplecartitems");
+  var jsonObject = {};
+  jsonObject.id = element.id;
+  jsonObject.innerHTML = element.innerHTML;
+
+  var jsonString = JSON.stringify(jsonObject); // this is json for your div. 
+
+  /// for append div and get div object back from json.
   
+  var elementProto = JSON.parse(jsonString);
+  
+  var element = document.createElement("simplecartitems");
+  element.innerHTML = elementProto.innerHTML;
+  element.id = elementProto.id;
+  
+  
+  // append to container (in your case its page 1 or 2)
+  
+  document.getElementById("simplecartitems").append(element);
+}
+
+</script>
+
+
 <script type="text/javascript">
 setInterval(function () {
   document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerHTML;

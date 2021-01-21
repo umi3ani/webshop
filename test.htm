@@ -56,6 +56,10 @@
         <input type='text' name='Address' placeholder='Adres' required /></p>
 	<p>Comments：<br>	
         <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
+
+<div id="simplecartitems" class="simpleCart_items">
+<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+</div>
 	
   
 	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
@@ -63,7 +67,7 @@
 	  <option value="AliPay">AliPay</option>
 	  <option value="BankTransfer">BankTransfer</option>
 	</select></h4>
-	<small><em>gghghfgjhhfghfgh</em></small>
+	<small><em>-------------</em></small>
 	<hr style="border:dashed #666 1px;">
 	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
       </fieldset>
@@ -75,17 +79,12 @@ Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
 
 
 
-<div id="simplecartitems" class="simpleCart_items" contenteditable="true" name="simplecartitems">
-<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
-</div>
-
-
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
 
 
 <script type="text/javascript">
 setInterval(function () {
-  document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").contents().text();
+  document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerHTML;
 }, 5);
 
 </script>

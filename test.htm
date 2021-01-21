@@ -63,7 +63,7 @@
 	  <option value="AliPay">AliPay</option>
 	  <option value="BankTransfer">BankTransfer</option>
 	</select></h4>
-	<small><em>uuuuuuuuuu</em></small>
+	<small><em>gghghfgjhhfghfgh</em></small>
 	<hr style="border:dashed #666 1px;">
 	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
       </fieldset>
@@ -74,24 +74,19 @@ Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
   </span>
 
 
+
 <div id="simplecartitems" class="simpleCart_items" contenteditable="true" name="simplecartitems">
 <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
 </div>
+
 
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
 
 
 <script type="text/javascript">
 setInterval(function () {
-  document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerHTML;
+  document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").contents().text();
 }, 5);
-
-(function() {
-    ('submitMe').click(function() {
-        ('result').text($('simplecartitemshidden').serialize());
-        return false;
-    });
-});
 
 </script>
   

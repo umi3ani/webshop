@@ -57,9 +57,8 @@
 	<p>Comments：<br>	
         <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
 
-<div id="simplecartitems" class="simpleCart_items">
+<div class="simpleCart_items"></div>
 <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
-</div>
 
 <div id="cartitem" class="item-name">
 <span class="item-name"></span>
@@ -83,12 +82,12 @@ Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
 
 
 
-<input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
+<input type="hidden" name="simpleCart_items" id="simplecartitemshidden"/>
 
 
 <script type="text/javascript">
 setInterval(function () {
-  document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerHTML;
+  document.getElementById("simplecartitemshidden").value = document.getElementById("simpleCart_items").innerHTML;
 }, 5);
 
 </script>

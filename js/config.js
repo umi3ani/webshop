@@ -79,7 +79,7 @@ $(function() {
 
 simpleCart.shipping(function(){
     if( simpleCart.total() < 10 ){
-         return 16;
+         return 20;
     }
     else if( simpleCart.total() < 500 ){
          return 30;

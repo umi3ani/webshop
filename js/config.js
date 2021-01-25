@@ -1,6 +1,16 @@
 $(function() {
 	simpleCart({
 
+  shippingCustom: function () { 
+    if (simpleCart.total() > 50) {
+      return 0;
+    } else if (simpleCart.total() > 20) {
+      return 10;
+    } else {
+      return 20;
+    }
+  },		
+		
 	    // array representing the format and columns of the cart, see
 	    // the cart columns documentation
 	    cartColumns: [
@@ -90,12 +100,4 @@ $(function() {
 
 	});
 
-});
-
-simpleCart.shipping(function(){
-    if( simpleCart.total() > 20 ){
-         return 0;
-     } else {
-         return 10;
-     }
 });

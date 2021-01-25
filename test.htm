@@ -35,7 +35,8 @@
     <div class="container simpleStore" style="background-color:#FFFFFF; border:40px solid #FFFFFF;">
 <div id="extratekst"> Alles bezorgen wij alleen binnen een straal van 10 km rondom het tuincentrum. Buiten deze straal kan in overleg. In de woonwijk Kloosterveen bezorgen wij altijd alles GRATIS ongeacht het aankoopbedrag. </div>	    
 
-
+<div id="simplecartitems" class="simpleCart_items"></div>
+<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
 	    
 <div id="Order-form">
   <form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
@@ -51,26 +52,16 @@
 	<p>Comments：<br>	
         <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
 
-<div id="simplecartitems" class="simpleCart_items"></div>
-<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
-
 
   
-	<h4 style="color: darkred">Betaling &nbsp;&nbsp;
+	<h5>Betaling &nbsp;&nbsp;
 	<select id="mySelect" name="Payment" required >
 	  <option value="AliPay">AliPay</option>
 	  <option value="BankTransfer">BankTransfer</option>
-	</select></h4>
-	<small><em>rttytrytyrt</em></small>
-	<hr style="border:dashed #666 1px;">
-	<button class="pull-right" type="submit"><h4>Verzenden</h4></button>
+	</select></h5>
+	<button class="pull-right" type="submit"><h5>Verzenden</h5></button>
       </fieldset>
       
-	<input type="text" name="_next" value="/success/"/>
-  <span class="pull-right" style="font-size: 65%;">
-Verzenden<a alt="terms and policy" href="/terms/"><strong>Verzenden</strong></a>
-  </span>
-
 
 
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>

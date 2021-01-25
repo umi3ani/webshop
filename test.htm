@@ -49,15 +49,14 @@ Send Us A Message
 <label class="label-input100" for="phone">Enter payment</label>
 <div class="wrap-input100">
 <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
-<span class="focus-input100"></span>
+<select id="dropDownSelect1" name="Payment" required >
+<option value="AliPay">AliPay</option>
+<option value="BankTransfer">BankTransfer</option>
+</select>
 </div>
 
 
 
-<select id="mySelect" name="Payment" required >
-<option value="AliPay">AliPay</option>
-<option value="BankTransfer">BankTransfer</option>
-</select>
 
 
 
@@ -92,8 +91,11 @@ setInterval(function () {
 </div>
 <div class="flex-col size2">
 
-<div id="simplecartitems" class="simpleCart_items"></div>
-<span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
+<div id="simplecartitems" class="simpleCart_items">
+<span class="simpleCart_quantity"></span>
+<span class="simpleCart_total"></span>
+</div>
+
 
 </div>
 </div>

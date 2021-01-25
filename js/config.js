@@ -45,23 +45,6 @@ $(function() {
 	    	'thumb'
 	    ],
 
-	    // custom function to add shipping cost
-	    shippingCustom: null,
-
-	    // flat rate shipping option
-	    shippingFlatRate: null,
-
-	    // added shipping based on this value multiplied by the cart quantity
-	    shippingQuantityRate: null,
-
-	    // added shipping based on this value multiplied by the cart subtotal
-	    shippingTotalRate: null,
-
-	    // tax rate applied to cart subtotal
-	    taxRate: null,
-
-	    // true if tax should be applied to shipping
-	    taxShipping: false,
 
 	    // event callbacks
 	    beforeAdd               	: null,
@@ -78,14 +61,32 @@ $(function() {
 	});
 
 simpleCart.shipping(function(){
-    if( simpleCart.total() < 10 ){
-         return 20;
+    if( simpleCart.quantity() <= 10 ){
+         return 4;
     }
-    else if( simpleCart.total() < 500 ){
+    else if( simpleCart.quantity() < 25 ){
+         return 5.5;
+    }
+    else if( simpleCart.quantity() < 50 ){
+         return 7.5;
+    }
+    else if( simpleCart.quantity() < 100 ){
+         return 8.5;
+    }
+    else if( simpleCart.quantity() < 200 ){
+         return 11;
+    }
+    else if( simpleCart.quantity() < 300 ){
+         return 16;
+    }
+    else if( simpleCart.quantity() < 400 ){
+         return 23;
+    }
+    else if( simpleCart.quantity() < 500 ){
          return 30;
     }
     else {
-         return 12; // amount for > 500
+         return 30; // amount for > 500
     }
 });
 	simpleStore.init({

@@ -91,3 +91,11 @@ $(function() {
 	});
 
 });
+
+simpleCart.shipping(function(){
+    if( simpleCart.total() > 20 ){
+         return 0;
+     } else {
+         return 10;
+     }
+});

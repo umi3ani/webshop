@@ -78,14 +78,14 @@ $(function() {
 	});
 
 simpleCart.shipping(function(){
-    if( simpleCart.total() < 10 ){
-         return 4;
+    if( simpleCart.total() < 25 ){
+         return 6.95;
     }
-    else if( simpleCart.total() > 10 ){
+    else if( simpleCart.total() > 25 ){
          return 0;
     }
     else {
-         return 30; // amount for > 500
+         return 6.95; // amount for > 500
     }
 });
 	simpleStore.init({

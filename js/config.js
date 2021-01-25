@@ -1,16 +1,6 @@
 $(function() {
 	simpleCart({
 
-  shippingCustom: function () { 
-    if (simpleCart.total() > 50) {
-      return 0;
-    } else if (simpleCart.total() > 20) {
-      return 10;
-    } else {
-      return 20;
-    }
-  },		
-		
 	    // array representing the format and columns of the cart, see
 	    // the cart columns documentation
 	    cartColumns: [
@@ -87,6 +77,35 @@ $(function() {
 
 	});
 
+simpleCart.shipping(function(){
+    if( simpleCart.quantity() <= 10 ){
+         return 4;
+    }
+    else if( simpleCart.quantity() < 25 ){
+         return 5.5;
+    }
+    else if( simpleCart.quantity() < 50 ){
+         return 7.5;
+    }
+    else if( simpleCart.quantity() < 100 ){
+         return 8.5;
+    }
+    else if( simpleCart.quantity() < 200 ){
+         return 11;
+    }
+    else if( simpleCart.quantity() < 300 ){
+         return 16;
+    }
+    else if( simpleCart.quantity() < 400 ){
+         return 23;
+    }
+    else if( simpleCart.quantity() < 500 ){
+         return 30;
+    }
+    else {
+         return 30; // amount for > 500
+    }
+});
 	simpleStore.init({
 
 		// brand can be text or image URL

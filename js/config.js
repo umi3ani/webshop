@@ -43,7 +43,37 @@ $(function() {
 	    excludeFromCheckout: [
 	    	'qty',
 	    	'thumb'
-	    ]
+	    ],
+
+	    // custom function to add shipping cost
+	    shippingCustom: null,
+
+	    // flat rate shipping option
+	    shippingFlatRate: null,
+
+	    // added shipping based on this value multiplied by the cart quantity
+	    shippingQuantityRate: null,
+
+	    // added shipping based on this value multiplied by the cart subtotal
+	    shippingTotalRate: null,
+
+	    // tax rate applied to cart subtotal
+	    taxRate: null,
+
+	    // true if tax should be applied to shipping
+	    taxShipping: false,
+
+	    // event callbacks
+	    beforeAdd               	: null,
+	    afterAdd                	: null,
+	    load                    	: null,
+	    beforeSave              	: null,
+	    afterSave               	: null,
+	    update                  	: null,
+	    ready                   	: null,
+	    checkoutSuccess             : null,
+	    checkoutFail                : null,
+	    beforeCheckout              : null
 
 	});
 

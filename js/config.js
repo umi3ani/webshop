@@ -46,7 +46,7 @@ $(function() {
 	    ],
 
 	    // custom function to add shipping cost
-	    shippingCustom: 0,
+	    shippingCustom: 10,
 
 	    // flat rate shipping option
 	    shippingFlatRate: 0,

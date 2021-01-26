@@ -86,7 +86,6 @@ simpleCart.shipping(function(){
     }
     else if( ("shippingSelect").val() == "de" ){return 29;}
          return 0;
-    }
     else {
          return 6.95; // amount for > 500
     }

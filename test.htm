@@ -65,7 +65,7 @@ input[type=submit]:hover {
 <div id="simplecartshipping" class="cart_info_item cart_shipping">Verzend kosten:
 <div class="simpleCart_shipping"></div>
 </div>
-<div class="cart_info_item cart_total"><b>Totaal:
+<div id="simplecarttotal" class="cart_info_item cart_total"><b>Totaal:
 <div class="simpleCart_grandTotal"></div>	
 </div>
 	    
@@ -90,10 +90,9 @@ input[type=submit]:hover {
 	</select></p>
 	<p>&nbsp;&nbsp;</p>
 	<fieldset>
-<legend>Please choose shipping:</legend>
+<legend>Ik woon in de woonwijk Kloosterveen:</legend>
 <input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="nul" style="display:none" checked>
-<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="ups"> UPS Standard 155€</label>
-<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="mail"> Standard Mail 10€</label>
+<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="ups">Ja</label>
 </fieldset>
 	<p>&nbsp;&nbsp;</p>
 	<button class="button button-primary" type="submit"><p>Verzenden</p></button>
@@ -103,19 +102,13 @@ input[type=submit]:hover {
 
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
 <input type="hidden" name="simplecartshipping" id="simplecartitemshiddenship"/>
-	
-    <script type="text/javascript">
-    simpleCart.shipping = function(){
-    if( $("#shippingSelect").val() == "nul" ){return 0;}    
-    if( $("#shippingSelect").val() == "ups" ){return 55;}
-    if( $("#shippingSelect").val() == "mail" ){return 10;}
-    };
-    </script>	
+<input type="hidden" name="simplecarttotal" id="simplecartitemshiddentotal"/>
 
 <script type="text/javascript">
 setInterval(function () {
   document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerText;
-  document.getElementById("simplecartitemshiddenship").value = document.getElementById("simplecartshipping").innerText;	
+  document.getElementById("simplecartitemshiddenship").value = document.getElementById("simplecartshipping").innerText;
+  document.getElementById("simplecartitemshiddentotal").value = document.getElementById("simplecarttotal").innerText;		
 }, 5);
 </script>
 

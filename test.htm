@@ -67,8 +67,6 @@ input[type=submit]:hover {
 </div>
 <div class="cart_info_item cart_total"><b>Totaal:
 <div class="simpleCart_grandTotal"></div>	
-				
-<label> <input type="checkbox" class="item_ship" value="Ja" /> Ik woon in de Woonwijk Kloosterveen</label><br/>
 </div>
 	    
 <div id="Order-form">
@@ -91,6 +89,13 @@ input[type=submit]:hover {
 	  <option value="Contant">Contant</option>
 	</select></p>
 	<p>&nbsp;&nbsp;</p>
+	<fieldset>
+<legend>Please choose shipping:</legend>
+<input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="nul" style="display:none" checked>
+<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="ups"> UPS Standard 25€</label>
+<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="mail"> Standard Mail 10€</label>
+</fieldset>
+	<p>&nbsp;&nbsp;</p>
 	<button class="button button-primary" type="submit"><p>Verzenden</p></button>
       </fieldset>
       
@@ -98,13 +103,19 @@ input[type=submit]:hover {
 
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
 
+	
+    <script type="text/javascript">
+    simpleCart.shipping = function(){
+    if( $("#shippingSelect").val() == "nul" ){return 0;}    
+    if( $("#shippingSelect").val() == "ups" ){return 25;}
+    if( $("#shippingSelect").val() == "mail" ){return 10;}
+    };
+    </script>	
 
 <script type="text/javascript">
 setInterval(function () {
   document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerText;
 }, 5);
-
-
 </script>
   
   </form><br>	    

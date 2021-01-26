@@ -21,8 +21,8 @@ $(function() {
         type: "SendForm" ,
         url: "https://studiogroenrijk.github.io/webshop/test.htm" ,
         method: "GET" ,
-        success: "https://studiogroenrijk.github.io/webshop" ,
-        cancel: "https://studiogroenrijk.github.io/webshop" ,
+        success: "success.html" ,
+        cancel: "cancel.html" ,
         extra_data: {
         customInfo1: "some custom information",
         customInfo2: "12321321"
@@ -78,16 +78,10 @@ $(function() {
 	});
 
 simpleCart.shipping(function(){
-var ddl = document.getElementById("item_ship");
-var selectedValue = ddl.options[ddl.selectedIndex].value;	  
-  
     if( simpleCart.total() < 25 ){
          return 6.95;
     }
     else if( simpleCart.total() > 25 ){
-         return 0;
-    }
-    else if( selectedValue == "Ik woon in de Woonwijk Kloosterveen"){
          return 0;
     }
     else {

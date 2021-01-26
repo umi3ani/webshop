@@ -69,25 +69,25 @@ input[type=submit]:hover {
 <div id="Order-form">
   <form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
       <fieldset>
-	<p>Name：<br> 
+	<p>Naam：<br> 
         <input type='text' name='Naam' placeholder='Naam' required /></p>
 	<p>Email：<br>
         <input type='text' name='Email' placeholder='Email' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
-	<p>Phone：<br>	
+	<p>Telefoon：<br>	
         <input type='text' name='Telefoon' placeholder='Telefoon' required /></p>
-	<p>Address：<br>
+	<p>Adres：<br>
         <input type='text' name='Adres' placeholder='Adres' required /></p>
 	<p>Voorkeur bezorgdatum?<br>	
         <textarea type='comments' name='Opmerkingen' rows="6" placeholder='Opmerkingen' /></textarea></p>
 
 
   
-	<p>Betaling &nbsp;&nbsp;
-	<select id="betaling" name="Betaalwijze" required >
+	<p>Betaling &nbsp;&nbsp;</p>
+	<select class="item_size" name="Betaalwijze" required >
 	  <option value="Vooraf betalen met betaalverzoek">Vooraf</option>
 	  <option value="Pinnen aan de deur">Pinnen</option>
 	  <option value="Contant">Contant</option>
-	</select></p>
+	</select>
 	<button class="button button-primary" type="submit"><p>Verzenden</p></button>
       </fieldset>
       

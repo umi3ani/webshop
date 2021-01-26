@@ -71,24 +71,25 @@ input[type=submit]:hover {
   <form accept-charset="UTF-8" action="//formspree.io/maylvqow" class="contact-form" method="post">
       <fieldset>
 	<p>Name：<br> 
-        <input type='text' name='Name' placeholder='Naam' required /></p>
+        <input type='text' name='Naam' placeholder='Naam' required /></p>
 	<p>Email：<br>
         <input type='text' name='Email' placeholder='Email' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
 	<p>Phone：<br>	
-        <input type='text' name='Phone' placeholder='Telefoon' required /></p>
+        <input type='text' name='Telefoon' placeholder='Telefoon' required /></p>
 	<p>Address：<br>
-        <input type='text' name='Address' placeholder='Adres' required /></p>
-	<p>Comments：<br>	
-        <textarea type='comments' name='Comments' rows="6" placeholder='Opmerkingen' /></textarea></p>
+        <input type='text' name='Adres' placeholder='Adres' required /></p>
+	<p>Voorkeur bezorgdatum?<br>	
+        <textarea type='comments' name='Opmerkingen' rows="6" placeholder='Opmerkingen' /></textarea></p>
 
 
   
-	<h5>Betaling &nbsp;&nbsp;
-	<select id="mySelect" name="Payment" required >
-	  <option value="AliPay">AliPay</option>
-	  <option value="BankTransfer">BankTransfer</option>
-	</select></h5>
-	<button class="pull-right" type="submit"><h5>Verzenden</h5></button>
+	<h2>Betaling &nbsp;&nbsp;
+	<select id="betaling" name="Betaalwijze" required >
+	  <option value="Vooraf betalen met betaalverzoek">Vooraf</option>
+	  <option value="Pinnen aan de deur">Pinnen</option>
+	  <option value="Contant">Contant</option>
+	</select></h2>
+	<button class="pull-right" type="submit"><h2>Verzenden</h2></button>
       </fieldset>
       
 

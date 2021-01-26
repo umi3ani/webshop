@@ -75,7 +75,7 @@ input[type=submit]:hover {
 	<p>Naam：<br> 
         <input type='text' name='Naam' placeholder='Naam' required /></p>
 	<p>Email：<br>
-        <input type='text' name='_replyto' placeholder='Email' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
+        <input type='text' name='Email' placeholder='Email' pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required /></p>
 	<p>Telefoon：<br>	
         <input type='text' name='Telefoon' placeholder='Telefoon' required /></p>
 	<p>Adres：<br>
@@ -102,12 +102,12 @@ input[type=submit]:hover {
 
 
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
-
+<input type="hidden" name="simpleCart_shipping" id="simplecartitemshiddenship"/>
 	
     <script type="text/javascript">
     simpleCart.shipping = function(){
     if( $("#shippingSelect").val() == "nul" ){return 0;}    
-    if( $("#shippingSelect").val() == "ups" ){return 25;}
+    if( $("#shippingSelect").val() == "ups" ){return 55;}
     if( $("#shippingSelect").val() == "mail" ){return 10;}
     };
     </script>	
@@ -117,7 +117,13 @@ setInterval(function () {
   document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerText;
 }, 5);
 </script>
-  
+
+<script type="text/javascript">
+setInterval(function () {
+  document.getElementById("simplecartitemshiddenship").value = document.getElementById("simpleCart_shipping").innerText;
+}, 5);
+</script>	
+	
   </form><br>	    
 	
     </div>

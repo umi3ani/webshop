@@ -9,10 +9,11 @@ $(function() {
 	        { view: "decrement" , label: false },
 	        { attr: "quantity" , label: "Aantal" },
 	        { view: "increment" , label: false },
+		//Add the ship attribute to the cart columns if desired
+	        { attr: "ship", label: "ship" },		    
+		//Add the ship attribute to the cart columns if desired
 	        { attr: "total" , label: "SubTotaal", view: 'valuta' },
 	        { view: "remove" , text: "Verwijder" , label: false }
-		//Add the ship attribute to the cart columns if desired
-	        { attr: "ship", label: "ship" },
 	    ],
 
 	    // "div" or "table" - builds the cart as a table or collection of divs

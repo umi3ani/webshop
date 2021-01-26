@@ -98,14 +98,6 @@ input[type=submit]:hover {
 	<button class="button button-primary" type="submit"><p>Verzenden</p></button>
       </fieldset>
       
-<select id="shippingSelect" onchange="simpleCart.update();">
-    <option value="de">Deutschland – Versandpauschale: 29 € &nbsp;</option>
-    <option value="at">Österreich – Versandpauschale: 49 € &nbsp;</option>
-    <option value="eu">EU – Versandpauschale: 99 € &nbsp;</option>
-    <option value="ch">Schweiz – Versandpauschale: 149 € &nbsp;</option>
-    <option value="welt">Weltweit – Versandpauschale: 249 € &nbsp;</option>
-</select>
-
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
 <input type="hidden" name="simplecartshipping" id="simplecartitemshiddenship"/>
 <input type="hidden" name="simplecarttotal" id="simplecartitemshiddentotal"/>
@@ -118,15 +110,6 @@ setInterval(function () {
 }, 5);
 </script>
 
-<script type="text/javascript">
-simpleCart.shipping = function(){
-  if( ("shippingSelect").val() == "de" ){return 29;}
-  if( ("shippingSelect").val() == "at" ){return 49;}
-  if( ("shippingSelect").val() == "eu" ){return 99;}
-  if( ("shippingSelect").val() == "ch" ){return 149;}
-  if( ("shippingSelect").val() == "welt" ){return 249;}
-};
-</script> 
 	
 </form><br>	    
 	

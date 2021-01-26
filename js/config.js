@@ -84,20 +84,13 @@ simpleCart.shipping(function(){
     else if( simpleCart.total() > 25 ){
          return 0;
     }
+    else if( ("shippingSelect").val() == "de" ){return 29;}
+         return 0;
+    }
     else {
          return 6.95; // amount for > 500
     }
 });
-	
-	
-simpleCart.shipping = function(){
-  if( ("shippingSelect").val() == "de" ){return 29;}
-  if( ("shippingSelect").val() == "at" ){return 49;}
-  if( ("shippingSelect").val() == "eu" ){return 99;}
-  if( ("shippingSelect").val() == "ch" ){return 149;}
-  if( ("shippingSelect").val() == "welt" ){return 249;}
-};
-
 	
 	simpleStore.init({
 

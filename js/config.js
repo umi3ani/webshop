@@ -24,8 +24,8 @@ $(function() {
         type: "SendForm" ,
         url: "https://studiogroenrijk.github.io/webshop/test.htm" ,
         method: "GET" ,
-        success: "success.html" ,
-        cancel: "cancel.html" ,
+        success: "https://studiogroenrijk.github.io/webshop" ,
+        cancel: "https://studiogroenrijk.github.io/webshop" ,
         extra_data: {
         customInfo1: "some custom information",
         customInfo2: "12321321"
@@ -80,11 +80,18 @@ $(function() {
 
 	});
 
-simpleCart.shipping(function(){
+  simpleCart.shipping(function(){
+  
+var ddl = document.getElementById("item_ship");
+var selectedValue = ddl.options[ddl.selectedIndex].value;	  
+  
     if( simpleCart.total() < 25 ){
          return 6.95;
     }
     else if( simpleCart.total() > 25 ){
+         return 0;
+    }
+    else if( selectedValue == "Ja"){
          return 0;
     }
     else {

@@ -77,8 +77,7 @@ $(function() {
 
 	});
 
-  simpleCart.shipping(function(){
-  
+simpleCart.shipping(function(){
 var ddl = document.getElementById("item_ship");
 var selectedValue = ddl.options[ddl.selectedIndex].value;	  
   
@@ -88,7 +87,7 @@ var selectedValue = ddl.options[ddl.selectedIndex].value;
     else if( simpleCart.total() > 25 ){
          return 0;
     }
-    else if( selectedValue == "Ja"){
+    else if( selectedValue == "Ik woon in de Woonwijk Kloosterveen"){
          return 0;
     }
     else {

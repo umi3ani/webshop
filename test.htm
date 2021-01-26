@@ -62,7 +62,7 @@ input[type=submit]:hover {
 <div id="simplecartitemsbox" style="border:10px solid #FFFFFF; margin:auto; padding:10px;">
 <div id="simplecartitems" class="simpleCart_items"></div>
 <span class="simpleCart_quantity"></span> items - <span class="simpleCart_total"></span>
-<div class="cart_info_item cart_shipping">Verzend kosten:
+<div id="simplecartshipping" class="cart_info_item cart_shipping">Verzend kosten:
 <div class="simpleCart_shipping"></div>
 </div>
 <div class="cart_info_item cart_total"><b>Totaal:
@@ -92,7 +92,7 @@ input[type=submit]:hover {
 	<fieldset>
 <legend>Please choose shipping:</legend>
 <input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="nul" style="display:none" checked>
-<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="ups"> UPS Standard 55€</label>
+<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="ups"> UPS Standard 155€</label>
 <label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="mail"> Standard Mail 10€</label>
 </fieldset>
 	<p>&nbsp;&nbsp;</p>
@@ -102,7 +102,7 @@ input[type=submit]:hover {
 
 
 <input type="hidden" name="simplecartitems" id="simplecartitemshidden"/>
-<input type="hidden" name="simpleCart_shipping" id="simplecartitemshiddenship"/>
+<input type="hidden" name="simplecartshipping" id="simplecartitemshiddenship"/>
 	
     <script type="text/javascript">
     simpleCart.shipping = function(){
@@ -115,7 +115,7 @@ input[type=submit]:hover {
 <script type="text/javascript">
 setInterval(function () {
   document.getElementById("simplecartitemshidden").value = document.getElementById("simplecartitems").innerText;
-  document.getElementById("simplecartitemshiddenship").value = document.getElementById("simpleCart_shipping").innerText;	
+  document.getElementById("simplecartitemshiddenship").value = document.getElementById("simplecartshipping").innerText;	
 }, 5);
 </script>
 

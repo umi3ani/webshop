@@ -92,7 +92,7 @@ input[type=submit]:hover {
 	<fieldset>
 <legend>Ik woon in de woonwijk Kloosterveen:</legend>
 <input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="nul" style="display:none" checked>
-<label><input type="radio" onclick="simpleCart.update" name="shipping" id="shippingSelect" class"item_shipping" value="ups"> Ja </label>
+<label><input type="radio" name="shipping" id="shippingSelect" class"item_shipping" value="ups"> Ja </label>
 </fieldset>
 	<p>&nbsp;&nbsp;</p>
 	<button class="button button-primary" type="submit"><p>Verzenden</p></button>
@@ -110,18 +110,7 @@ setInterval(function () {
 }, 5);
 </script>
 
-<script type="text/javascript">
-function calc()
-{
-  if (document.getElementById('shippingSelect').checked) 
-  {
-      document.getElementById('simpleCart_shipping').value = 10;
-  } else {
-      calculate();
-  }
-}
-</script>	
-	
+
 	
 </form><br>	    
 	
